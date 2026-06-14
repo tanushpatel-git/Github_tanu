@@ -1,0 +1,228 @@
+[
+  {
+    "name": "Init",
+    "category": "Git",
+    "description": "Initialize a new Git repository",
+    "command": "git init",
+    "inputs": []
+  },
+  {
+    "name": "Status",
+    "category": "Git",
+    "description": "Show working tree status",
+    "command": "git status",
+    "inputs": []
+  },
+  {
+    "name": "Add File",
+    "category": "Git",
+    "description": "Stage a file for commit",
+    "command": "git add {file}",
+    "inputs": [
+      {
+        "name": "file",
+        "label": "File Path",
+        "type": "file",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "Add All",
+    "category": "Git",
+    "description": "Stage all changes for commit",
+    "command": "git add .",
+    "inputs": []
+  },
+  {
+    "name": "Commit",
+    "category": "Git",
+    "description": "Commit staged changes with a message",
+    "command": "git commit -m \"{message}\"",
+    "inputs": [
+      {
+        "name": "message",
+        "label": "Commit Message",
+        "type": "text",
+        "required": true,
+        "placeholder": "Enter commit message"
+      }
+    ]
+  },
+  {
+    "name": "Commit Amend",
+    "category": "Git",
+    "description": "Amend the last commit with a new message",
+    "command": "git commit --amend -m \"{message}\"",
+    "inputs": [
+      {
+        "name": "message",
+        "label": "Commit Message",
+        "type": "text",
+        "required": true,
+        "placeholder": "Enter amended commit message"
+      }
+    ]
+  },
+  {
+    "name": "Push",
+    "category": "Git",
+    "description": "Push commits to remote repository",
+    "command": "git push",
+    "inputs": []
+  },
+  {
+    "name": "Pull",
+    "category": "Git",
+    "description": "Pull latest changes from remote repository",
+    "command": "git pull",
+    "inputs": []
+  },
+  {
+    "name": "Fetch",
+    "category": "Git",
+    "description": "Fetch changes from remote repository",
+    "command": "git fetch",
+    "inputs": []
+  },
+  {
+    "name": "Clone",
+    "category": "Git",
+    "description": "Clone a repository from a URL",
+    "command": "git clone {url}",
+    "inputs": [
+      {
+        "name": "url",
+        "label": "Repository URL",
+        "type": "text",
+        "required": true,
+        "placeholder": "https://github.com/user/repo.git"
+      }
+    ]
+  },
+  {
+    "name": "List Branches",
+    "category": "Git",
+    "description": "List all branches",
+    "command": "git branch",
+    "inputs": []
+  },
+  {
+    "name": "Create Branch",
+    "category": "Git",
+    "description": "Create and switch to a new branch",
+    "command": "git checkout -b {branch}",
+    "inputs": [
+      {
+        "name": "branch",
+        "label": "Branch Name",
+        "type": "text",
+        "required": true,
+        "placeholder": "feature/my-feature"
+      }
+    ]
+  },
+  {
+    "name": "Checkout",
+    "category": "Git",
+    "description": "Switch to an existing branch",
+    "command": "git checkout {branch}",
+    "inputs": [
+      {
+        "name": "branch",
+        "label": "Branch Name",
+        "type": "text",
+        "required": true,
+        "placeholder": "main"
+      }
+    ]
+  },
+  {
+    "name": "Merge Branch",
+    "category": "Git",
+    "description": "Merge a branch into the current branch",
+    "command": "git merge {branch}",
+    "inputs": [
+      {
+        "name": "branch",
+        "label": "Branch Name",
+        "type": "text",
+        "required": true,
+        "placeholder": "feature/my-feature"
+      }
+    ]
+  },
+  {
+    "name": "Stash",
+    "category": "Git",
+    "description": "Stash working directory changes",
+    "command": "git stash",
+    "inputs": []
+  },
+  {
+    "name": "Stash Pop",
+    "category": "Git",
+    "description": "Restore stashed changes",
+    "command": "git stash pop",
+    "inputs": []
+  },
+  {
+    "name": "Reset",
+    "category": "Git",
+    "description": "Unstage a file",
+    "command": "git reset {file}",
+    "inputs": [
+      {
+        "name": "file",
+        "label": "File Path",
+        "type": "file",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "Reset Hard",
+    "category": "Git",
+    "description": "Hard reset to a specific commit (DANGEROUS)",
+    "command": "git reset --hard {commit}",
+    "inputs": [
+      {
+        "name": "commit",
+        "label": "Commit Hash",
+        "type": "text",
+        "required": true,
+        "placeholder": "HEAD~1 or commit hash"
+      }
+    ]
+  },
+  {
+    "name": "Revert",
+    "category": "Git",
+    "description": "Revert a commit by creating a new commit",
+    "command": "git revert {commit}",
+    "inputs": [
+      {
+        "name": "commit",
+        "label": "Commit Hash",
+        "type": "text",
+        "required": true,
+        "placeholder": "commit hash to revert"
+      }
+    ]
+  },
+  {
+    "name": "Log",
+    "category": "Git",
+    "description": "Show commit log",
+    "command": "git log --oneline -n {count}",
+    "inputs": [
+      {
+        "name": "count",
+        "label": "Number of Commits",
+        "type": "text",
+        "required": false,
+        "placeholder": "10"
+      }
+    ]
+  }
+]

@@ -1,0 +1,112 @@
+{
+  "name": "github-tanu",
+  "displayName": "GitHub Tanu",
+  "description": "A visual terminal assistant for executing commands without memorizing them",
+  "version": "0.1.0",
+  "publisher": "Tanush Patel",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other",
+    "Terminal"
+  ],
+  "keywords": [
+    "terminal",
+    "commands",
+    "git"
+  ],
+  "activationEvents": [
+    "onView:commandWizard",
+    "onCommand:commandWizard.execute",
+    "onCommand:commandWizard.search",
+    "onCommand:commandWizard.executeRecent"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "commandWizard",
+          "title": "Command Wizard",
+          "icon": "icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "commandWizard": [
+        {
+          "id": "commandWizard",
+          "name": "COMMAND WIZARD"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "commandWizard.execute",
+        "title": "Execute Command"
+      },
+      {
+        "command": "commandWizard.executeRecent",
+        "title": "Execute Recent Command"
+      },
+      {
+        "command": "commandWizard.search",
+        "title": "Search Commands",
+        "icon": "$(search)"
+      },
+      {
+        "command": "commandWizard.refresh",
+        "title": "Refresh",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "commandWizard.addFavorite",
+        "title": "Add to Favorites",
+        "icon": "$(star-add)"
+      },
+      {
+        "command": "commandWizard.removeFavorite",
+        "title": "Remove from Favorites",
+        "icon": "$(star-delete)"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "commandWizard.search",
+          "when": "view == commandWizard",
+          "group": "navigation"
+        },
+        {
+          "command": "commandWizard.refresh",
+          "when": "view == commandWizard",
+          "group": "navigation"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "commandWizard.addFavorite",
+          "when": "view == commandWizard && viewItem == command",
+          "group": "inline"
+        },
+        {
+          "command": "commandWizard.removeFavorite",
+          "when": "view == commandWizard && viewItem == favorite",
+          "group": "inline"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.3.3"
+  }
+}
