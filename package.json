@@ -1,6 +1,6 @@
 {
-  "name": "github-tanu",
-  "displayName": "GitHub Tanu",
+  "name": "github-wizard",
+  "displayName": "GitHub Wizard",
   "description": "A visual terminal assistant for executing commands without memorizing them",
   "version": "0.1.0",
   "publisher": "TanushPatel",
