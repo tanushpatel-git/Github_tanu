@@ -3,14 +3,17 @@
   "displayName": "GitHub Tanu",
   "description": "A visual terminal assistant for executing commands without memorizing them",
   "version": "0.1.0",
-  "publisher": "Tanush Patel",
+  "publisher": "TanushPatel",
   "license": "MIT",
   "engines": {
     "vscode": "^1.85.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tanushpatel-git/Github_tanu.git"
+  },
   "categories": [
-    "Other",
-    "Terminal"
+    "Other"
   ],
   "keywords": [
     "terminal",
